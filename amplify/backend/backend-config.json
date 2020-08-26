@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"testamplifyappe502fd22": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
