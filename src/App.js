@@ -16,8 +16,11 @@ function App() {
   }, []);
 
   async function fetchNotes() {
+    console.log("19");
     const apiData = await API.graphql({ query: listNotes });
+    console.log("21");
     const notesFromAPI = apiData.data.listNotes.items;
+    console.log("13");
     await Promise.all(notesFromAPI.map(async note => {
       if (note.image) {
         const image = await Storage.get(note.image);
@@ -25,6 +28,7 @@ function App() {
       }
       return note;
     }))
+    console.log("31");
     setNotes(apiData.data.listNotes.items);
   }
 
